@@ -6,26 +6,37 @@
 <title>Alchemix 2025 | I.I.Ch.E. Jadavpur University</title>
 <style>
 * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, sans-serif;}
-body {background:#000; color:#fff; overflow-x:hidden; scroll-behavior:smooth; padding-top:70px;}
+body {
+  background:#000; 
+  color:#fff; 
+  overflow-x:hidden; 
+  scroll-behavior:smooth; 
+  padding-top:70px;
+}
 canvas {position:fixed; top:0; left:0; width:100%; height:100%; z-index:0;}
 .content {position: relative; z-index: 1; text-align: center; padding: 100px 20px;}
 
-/* Logo & Text */
-.logo {width:480px; max-width:180%; margin:0 auto 65px auto; display:block;}
+/* LOGO & TEXT */
+.logo {
+  width:480px; 
+  max-width:80%; 
+  margin:0 auto 65px auto; 
+  display:block;
+}
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 .alchemix-title {
   font-family: 'Audiowide', sans-serif;
   font-size: 30px;
   color: transparent;
-  -webkit-text-stroke: 2px #0ff; /* Neon green outline */
+  -webkit-text-stroke: 2px #0ff;
   text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
   letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 .countdown {
   font-size:1.6rem;
   margin-top:20px;
@@ -38,6 +49,8 @@ canvas {position:fixed; top:0; left:0; width:100%; height:100%; z-index:0;}
   font-weight:bold;
   font-size:1.5rem;
 }
+
+/* CORNER LOGOS */
 .corner-logo {
   position: absolute;
   top: 20px;
@@ -46,22 +59,23 @@ canvas {position:fixed; top:0; left:0; width:100%; height:100%; z-index:0;}
   z-index: 5;
   filter: drop-shadow(0 0 8px #00ffcc);
 }
+.left-logo { left:40px; }
+.right-logo { right:40px; }
 
-.left-logo {
-  left:40px;
+/* TITLE */
+.title {
+  font-size:2rem; 
+  color:#0ff; 
+  margin-bottom:10px; 
+  text-shadow:0 0 20px #0ff;
 }
 
-.right-logo {
-  right: 40px;
-}
-
-.title {font-size:2 rem; color:#0ff; margin-bottom:10px; text-shadow:0 0 20px #0ff;}
-/* Coming Soon */
+/* COMING SOON */
 .coming-soon {
- font-family: 'Audiowide', sans-serif;
+  font-family: 'Audiowide', sans-serif;
   font-size: 50px;
   color: transparent;
-  -webkit-text-stroke: 2px #0ff; /* Neon green outline */
+  -webkit-text-stroke: 2px #0ff;
   text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -73,43 +87,84 @@ canvas {position:fixed; top:0; left:0; width:100%; height:100%; z-index:0;}
   50% {opacity:0.5;}
 }
 
-/* Audio */
-.audio-controls {position: fixed; bottom: 50px; left: 43px; z-index: 10;}
-.audio-controls button {padding: 18px; border: none; border-radius: 50%; background:#0ff; color:#000; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px rgba(0,255,255,0.6); transition: 0.3s;}
+/* AUDIO BUTTON */
+.audio-controls {
+  position: fixed; 
+  bottom: 50px; 
+  left: 43px; 
+  z-index: 10;
+}
+.audio-controls button {
+  padding: 18px; 
+  border: none; 
+  border-radius: 50%; 
+  background:#0ff; 
+  color:#000; 
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  cursor: pointer; 
+  box-shadow: 0 0 15px rgba(0,255,255,0.6); 
+  transition: 0.3s;
+}
 .audio-controls button:hover {background:#0aa; color:#fff;}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .logo {width: 360px;}
+  .coming-soon {font-size: 40px;}
+  .title {font-size: 1.6rem;}
+}
+@media (max-width: 768px) {
+  .logo {width: 260px; margin-bottom: 40px;}
+  .corner-logo {width: 80px; top: 15px;}
+  .left-logo {left: 15px;}
+  .right-logo {right: 15px;}
+  .coming-soon {font-size: 32px; -webkit-text-stroke: 1.5px #0ff;}
+  .countdown {font-size: 1.2rem;}
+  .countdown span {min-width: 60px; font-size: 1.2rem;}
+  .title {font-size: 1.2rem;}
+  .audio-controls {bottom: 30px; left: 20px;}
+  .audio-controls button {padding: 14px; font-size: 1rem;}
+}
+@media (max-width: 480px) {
+  .logo {width: 200px; margin-bottom: 25px;}
+  .corner-logo {width: 60px; top: 10px;}
+  .coming-soon {font-size: 26px; letter-spacing: 2px;}
+  .title {font-size: 1rem;}
+  .countdown {font-size: 1rem;}
+  .countdown span {min-width: 50px; font-size: 1rem;}
+  .audio-controls button {padding: 12px; font-size: 0.9rem;}
+}
 </style>
 </head>
-<body>
 
-<!-- Background Canvases -->
+<body>
+<!-- BACKGROUND CANVASES -->
 <canvas id="stars"></canvas>
 <canvas id="backgroundWave"></canvas>
 <canvas id="circleWave"></canvas>
 
+<!-- CONTENT -->
 <div class="content">
   <img src="1.png" class="corner-logo left-logo">
   <img src="2.png" class="corner-logo right-logo">
- <p style="margin-top: 40px;">  </p>
-  <h1 class="title">I.I.Ch.E. Jadavpur University Student Chapter  presents</h1>
-    <img src="Untitled_design-removebg-preview.png" alt="Alchemix Logo" class="logo">
-
-    
-    
-    <div id="countdown" class="countdown"></div>
-    <div class="coming-soon">COMING SOON</div>
+  <h1 class="title">I.I.Ch.E. Jadavpur University Student Chapter Presents</h1>
+  <img src="Untitled_design-removebg-preview.png" alt="Alchemix Logo" class="logo">
+  <div id="countdown" class="countdown"></div>
+  <div class="coming-soon">COMING SOON</div>
 </div>
 
-<!-- Music Controls -->
+<!-- AUDIO CONTROL -->
 <div class="audio-controls">
-    <audio id="music" loop>
-        <source src="your_music_link.mp3" type="audio/mpeg">
-        Your browser does not support audio.
-    </audio>
-    <button id="playBtn">▶</button>
+  <audio id="music" loop>
+    <source src="your_music_link.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+  <button id="playBtn">▶</button>
 </div>
 
 <script>
-// ---- COUNTDOWN ----
+/* COUNTDOWN */
 const countdown = document.getElementById('countdown');
 function updateCountdown() {
   const targetDate = new Date("November 14, 2025 00:00:00").getTime();
@@ -131,15 +186,23 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ---- STAR BACKGROUND ----
-const starCanvas=document.getElementById('stars'); const sCtx=starCanvas.getContext('2d');
-let sw=starCanvas.width=window.innerWidth; let sh=starCanvas.height=window.innerHeight;
+/* STAR BACKGROUND */
+const starCanvas=document.getElementById('stars'); 
+const sCtx=starCanvas.getContext('2d');
+let sw=starCanvas.width=window.innerWidth; 
+let sh=starCanvas.height=window.innerHeight;
 window.addEventListener('resize',()=>{sw=starCanvas.width=window.innerWidth;sh=starCanvas.height=window.innerHeight;});
-class Particle{constructor(){this.reset();} reset(){this.x=Math.random()*sw;this.y=sh+Math.random()*sh;this.size=Math.random()*2+1;this.speed=Math.random()*0.5+0.1;this.opacity=Math.random()*0.5+0.3;} update(){this.y-=this.speed;this.opacity-=0.0003;if(this.y<-10||this.opacity<=0)this.reset();} draw(){sCtx.beginPath();sCtx.arc(this.x,this.y,this.size,0,Math.PI*2);sCtx.fillStyle=`rgba(255,255,255,${this.opacity})`;sCtx.shadowBlur=4;sCtx.shadowColor="white";sCtx.fill();}}
+class Particle{
+  constructor(){this.reset();}
+  reset(){this.x=Math.random()*sw;this.y=sh+Math.random()*sh;this.size=Math.random()*2+1;this.speed=Math.random()*0.5+0.1;this.opacity=Math.random()*0.5+0.3;}
+  update(){this.y-=this.speed;this.opacity-=0.0003;if(this.y<-10||this.opacity<=0)this.reset();}
+  draw(){sCtx.beginPath();sCtx.arc(this.x,this.y,this.size,0,Math.PI*2);sCtx.fillStyle=`rgba(255,255,255,${this.opacity})`;sCtx.shadowBlur=4;sCtx.shadowColor="white";sCtx.fill();}
+}
 const particles=[];for(let i=0;i<600;i++)particles.push(new Particle());
-function animateStars(){sCtx.clearRect(0,0,sw,sh);for(let p of particles){p.update();p.draw();}requestAnimationFrame(animateStars);} animateStars();
+function animateStars(){sCtx.clearRect(0,0,sw,sh);for(let p of particles){p.update();p.draw();}requestAnimationFrame(animateStars);} 
+animateStars();
 
-// ---- BACKGROUND WAVES ----
+/* BACKGROUND WAVES */
 const bgCanvas=document.getElementById('backgroundWave'); const bgCtx=bgCanvas.getContext('2d');
 const circleCanvas=document.getElementById('circleWave'); const cCtx=circleCanvas.getContext('2d');
 function resizeCanvases(){bgCanvas.width=window.innerWidth;bgCanvas.height=window.innerHeight;circleCanvas.width=window.innerWidth;circleCanvas.height=window.innerHeight;}
@@ -157,8 +220,32 @@ playBtn.addEventListener('click',async()=>{
   if(music.paused){await music.play(); playBtn.textContent="⏸";} else {music.pause(); playBtn.textContent="▶";}
 });
 function updateAudioData(){if(analyserBg)analyserBg.getByteFrequencyData(dataArrayBg);if(analyserCircle)analyserCircle.getByteFrequencyData(dataArrayCircle);requestAnimationFrame(updateAudioData);}
-function drawBackgroundWave(){bgCtx.clearRect(0,0,bgCanvas.width,bgCanvas.height);let bgAmplitude=50;if(dataArrayBg){let bass=0;for(let i=0;i<30;i++)bass+=dataArrayBg[i];bgAmplitude=10+bass/75;}bgCtx.beginPath();bgCtx.strokeStyle="rgba(0,191,255,0.3)";bgCtx.lineWidth=2;for(let x=0;x<bgCanvas.width;x++){let y=bgCanvas.height/2+Math.sin(x*0.02+t)*bgAmplitude;if(x===0)bgCtx.moveTo(x,y);else bgCtx.lineTo(x,y);}bgCtx.stroke();t+=0.04;requestAnimationFrame(drawBackgroundWave);}
-function drawCircleWave(){cCtx.clearRect(0,0,circleCanvas.width,circleCanvas.height);const centerX=70;const centerY=window.innerHeight-80;const radius=3;let jump=0;if(dataArrayCircle){let bass=0;for(let i=0;i<10;i++)bass+=dataArrayCircle[i];jump=bass/95;}cCtx.beginPath();cCtx.strokeStyle="aqua";cCtx.lineWidth=2;for(let angle=-0.5*(Math.PI);angle<=Math.PI*2;angle+=0.02){const i=Math.floor((angle/(2*Math.PI))*(dataArrayCircle?dataArrayCircle.length:1));const waveAmp=dataArrayCircle?dataArrayCircle[i]/5:0;const r=radius+Math.sin(angle*6+t*0.5)*waveAmp+jump;const x=centerX+r*Math.cos(angle);const y=centerY+r*Math.sin(angle);if(angle===0)cCtx.moveTo(x,y);else cCtx.lineTo(x,y);}cCtx.closePath();cCtx.stroke();requestAnimationFrame(drawCircleWave);}
+function drawBackgroundWave(){
+  bgCtx.clearRect(0,0,bgCanvas.width,bgCanvas.height);
+  let bgAmplitude=50;
+  if(dataArrayBg){let bass=0;for(let i=0;i<30;i++)bass+=dataArrayBg[i];bgAmplitude=10+bass/75;}
+  bgCtx.beginPath();bgCtx.strokeStyle="rgba(0,191,255,0.3)";bgCtx.lineWidth=2;
+  for(let x=0;x<bgCanvas.width;x++){
+    let y=bgCanvas.height/2+Math.sin(x*0.02+t)*bgAmplitude;
+    if(x===0)bgCtx.moveTo(x,y);else bgCtx.lineTo(x,y);
+  }
+  bgCtx.stroke();t+=0.04;requestAnimationFrame(drawBackgroundWave);
+}
+function drawCircleWave(){
+  cCtx.clearRect(0,0,circleCanvas.width,circleCanvas.height);
+  const centerX=70;const centerY=window.innerHeight-80;const radius=3;let jump=0;
+  if(dataArrayCircle){let bass=0;for(let i=0;i<10;i++)bass+=dataArrayCircle[i];jump=bass/95;}
+  cCtx.beginPath();cCtx.strokeStyle="aqua";cCtx.lineWidth=2;
+  for(let angle=-0.5*(Math.PI);angle<=Math.PI*2;angle+=0.02){
+    const i=Math.floor((angle/(2*Math.PI))*(dataArrayCircle?dataArrayCircle.length:1));
+    const waveAmp=dataArrayCircle?dataArrayCircle[i]/5:0;
+    const r=radius+Math.sin(angle*6+t*0.5)*waveAmp+jump;
+    const x=centerX+r*Math.cos(angle);
+    const y=centerY+r*Math.sin(angle);
+    if(angle===0)cCtx.moveTo(x,y);else cCtx.lineTo(x,y);
+  }
+  cCtx.closePath();cCtx.stroke();requestAnimationFrame(drawCircleWave);
+}
 </script>
 </body>
 </html>
