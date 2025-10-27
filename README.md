@@ -1,1 +1,1 @@
-# iiche
+# Alchemix IIChE
